@@ -1,0 +1,25 @@
+= form_for @candidato do |f|
+  - if @candidato.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@candidato.errors.count, "error")} prohibited this candidato from being saved:"
+      %ul
+        - @candidato.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :matricula
+    = f.number_field :matricula
+  .field
+    = f.label :nome
+    = f.text_field :nome
+  .field
+    = f.label :semestre
+    = f.number_field :semestre
+  .field
+    = f.label :ira
+    = f.number_field :ira
+  .field
+    = f.label :email
+    = f.text_field :email
+  .actions
+    = f.submit 'Save'

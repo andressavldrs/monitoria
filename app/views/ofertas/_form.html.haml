@@ -1,0 +1,13 @@
+= form_for @oferta do |f|
+  - if @oferta.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@oferta.errors.count, "error")} prohibited this oferta from being saved:"
+      %ul
+        - @oferta.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :turma
+    = f.text_field :turma
+  .actions
+    = f.submit 'Save'

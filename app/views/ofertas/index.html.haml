@@ -1,0 +1,21 @@
+%h1 Listing ofertas
+
+%table
+  %thead
+    %tr
+      %th Turma
+      %th
+      %th
+      %th
+
+  %tbody
+    - @ofertas.each do |oferta|
+      %tr
+        %td= oferta.turma
+        %td= link_to 'Show', oferta
+        %td= link_to 'Edit', edit_oferta_path(oferta)
+        %td= link_to 'Destroy', oferta, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Oferta', new_oferta_path
