@@ -1,0 +1,23 @@
+%h1 Listing selecionados
+
+%table
+  %thead
+    %tr
+      %th Disciplina
+      %th Oferta
+      %th
+      %th
+      %th
+
+  %tbody
+    - @selecionados.each do |selecionado|
+      %tr
+        %td= selecionado.disciplina
+        %td= selecionado.oferta
+        %td= link_to 'Show', selecionado
+        %td= link_to 'Edit', edit_selecionado_path(selecionado)
+        %td= link_to 'Destroy', selecionado, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Selecionado', new_selecionado_path

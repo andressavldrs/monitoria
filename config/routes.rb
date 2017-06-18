@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :selecionados
   resources :tipos
   resources :disciplinas
   resources :ofertas

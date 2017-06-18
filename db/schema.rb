@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170617200227) do
+ActiveRecord::Schema.define(version: 20170618033706) do
 
   create_table "candidatos", force: :cascade do |t|
     t.integer "matricula"
@@ -39,6 +39,15 @@ ActiveRecord::Schema.define(version: 20170617200227) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["disciplina_id"], name: "index_ofertas_on_disciplina_id", unique: true
+  end
+
+  create_table "selecionados", force: :cascade do |t|
+    t.integer "oferta_id"
+    t.integer "disciplina_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["disciplina_id"], name: "index_selecionados_on_disciplina_id", unique: true
+    t.index ["oferta_id"], name: "index_selecionados_on_oferta_id", unique: true
   end
 
   create_table "tipos", force: :cascade do |t|
