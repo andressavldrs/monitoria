@@ -1,0 +1,21 @@
+%p#notice= notice
+
+%p
+  %b Matricula:
+  = @candidato.matricula
+%p
+  %b Nome:
+  = @candidato.nome
+%p
+  %b Semestre:
+  = @candidato.semestre
+%p
+  %b Ira:
+  = @candidato.ira
+%p
+  %b Email:
+  = @candidato.email
+
+= link_to 'Edit', edit_candidato_path(@candidato)
+\|
+= link_to 'Back', candidatos_path

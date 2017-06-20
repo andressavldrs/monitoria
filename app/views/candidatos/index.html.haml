@@ -1,0 +1,29 @@
+%h1 Listing candidatos
+
+%table
+  %thead
+    %tr
+      %th Matricula
+      %th Nome
+      %th Semestre
+      %th Ira
+      %th Email
+      %th
+      %th
+      %th
+
+  %tbody
+    - @candidatos.each do |candidato|
+      %tr
+        %td= candidato.matricula
+        %td= candidato.nome
+        %td= candidato.semestre
+        %td= candidato.ira
+        %td= candidato.email
+        %td= link_to 'Show', candidato
+        %td= link_to 'Edit', edit_candidato_path(candidato)
+        %td= link_to 'Destroy', candidato, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Candidato', new_candidato_path

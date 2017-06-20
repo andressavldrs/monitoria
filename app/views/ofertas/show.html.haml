@@ -1,0 +1,9 @@
+%p#notice= notice
+
+%p
+  %b Turma:
+  = @oferta.turma
+
+= link_to 'Edit', edit_oferta_path(@oferta)
+\|
+= link_to 'Back', ofertas_path

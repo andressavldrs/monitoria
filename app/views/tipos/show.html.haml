@@ -1,0 +1,9 @@
+%p#notice= notice
+
+%p
+  %b Descricao:
+  = @tipo.descricao
+
+= link_to 'Edit', edit_tipo_path(@tipo)
+\|
+= link_to 'Back', tipos_path
