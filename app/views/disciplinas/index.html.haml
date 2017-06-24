@@ -1,23 +1,30 @@
-%h1 Listing disciplinas
 
-%table
+%h2 Disciplinas do Semestre Corrente
+%table#disciplinas
   %thead
     %tr
-      %th Codigo
+      %th Código
       %th Nome
-      %th
-      %th
-      %th
-
   %tbody
     - @disciplinas.each do |disciplina|
       %tr
         %td= disciplina.codigo
         %td= disciplina.nome
-        %td= link_to 'Show', disciplina
-        %td= link_to 'Edit', edit_disciplina_path(disciplina)
-        %td= link_to 'Destroy', disciplina, :method => :delete, :data => { :confirm => 'Are you sure?' }
 
+        %td= link_to 'Mostar', disciplina
+        %td= link_to 'Editar', edit_disciplina_path(disciplina)
+        %td= link_to 'Deletar', disciplina, :method => :delete, :data => { :confirm => 'Are you sure?' }
+        - #Icones <div>Icons made by <a href="http://www.flaticon.com/authors/flat-icons" title="Flat Icons">Flat Icons</a> from <a href="http://www.flaticon.com" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
+  %tfooter
 %br
+= link_to image_tag('adicionar.png'), new_disciplina_path
+%br
+%tr
+  %h4 Importar Lista de Disciplinas
+  = form_tag import_disciplinas_path, multipart: true do
+    = file_field_tag :file
+    = submit_tag "Importar CSV"
+%br
+%br
+%h4 Ultima atualização
 
-= link_to 'New Disciplina', new_disciplina_path

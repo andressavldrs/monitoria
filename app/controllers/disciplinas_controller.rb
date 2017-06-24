@@ -7,6 +7,12 @@ class DisciplinasController < ApplicationController
     @disciplinas = Disciplina.all
   end
 
+  def import
+    Disciplina.import(params[:file])
+    redirect_to disciplinas_path, notice: "Disciplinas Adicionadas com Sucesso."
+  end
+
+
   # GET /disciplinas/1
   # GET /disciplinas/1.json
   def show
@@ -27,12 +33,17 @@ class DisciplinasController < ApplicationController
     @disciplina = Disciplina.new(disciplina_params)
 
     respond_to do |format|
-      if @disciplina.save
-        format.html { redirect_to @disciplina, notice: 'Disciplina was successfully created.' }
-        format.json { render :show, status: :created, location: @disciplina }
+      
+      if Disciplina.exists?(:codigo => arr[0], :nome => arr[1])
+        flash[:aviso] = "A oferta não foi incluída pois já existe"
       else
-        format.html { render :new }
-        format.json { render json: @disciplina.errors, status: :unprocessable_entity }
+        if @disciplina.save
+          format.html { redirect_to @disciplina, notice: 'Disciplina criada com sucesso.' }
+          format.json { render :show, status: :created, location: @disciplina }
+        else
+          format.html { render :new }
+          format.json { render json: @disciplina.errors, status: :unprocessable_entity }
+        end
       end
     end
   end
