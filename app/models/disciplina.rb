@@ -13,17 +13,22 @@ class Disciplina < ApplicationRecord
 
 	def self.import(file)
 		CSV.foreach(file.path, headers: true) do |row|
-	     	disciplina_hash = row.to_hash # exclude the price field
+	     	disciplina_hash = row.to_hash
 	      	disciplina = Disciplina.where(id: disciplina_hash["id"])
 
 	     	if disciplina.count == 1
 	       		disciplina.first.update_attributes(disciplina_hash)
 	      	else
 	        	Disciplina.create!(disciplina_hash)
-	      	end # end if !product.nil?
-		end # end CSV.foreach
-	end # end self.import(file)
-end# end class
+	      	end
+		end
+	end
 
+	validates :nome, :presence => true, :uniqueness => true
+	validates :codigo, numericality: { only_integer: true }, :presence => true, :uniqueness => true
+	#valida para não incluir disciplinas duplicadas
+end
+
+	
 
 

@@ -1,6 +1,5 @@
 class CandidatosController < ApplicationController
   before_action :set_candidato, only: [:show, :edit, :update, :destroy]
-
   # GET /candidatos
   # GET /candidatos.json
   def index

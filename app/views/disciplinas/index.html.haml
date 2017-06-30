@@ -1,7 +1,7 @@
-
-%h2 Disciplinas do Semestre Corrente
+%h2 Disciplinas do Departamento de Ciência da Computação CIC
 %table#disciplinas
   %thead
+    %br
     %tr
       %th Código
       %th Nome
@@ -11,9 +11,9 @@
         %td= disciplina.codigo
         %td= disciplina.nome
 
-        %td= link_to 'Mostar', disciplina
-        %td= link_to 'Editar', edit_disciplina_path(disciplina)
-        %td= link_to 'Deletar', disciplina, :method => :delete, :data => { :confirm => 'Are you sure?' }
+        /%td= link_to 'Mostar', disciplina
+        /%td= link_to 'Editar', edit_disciplina_path(disciplina)
+        /%td= link_to 'Deletar', disciplina, :method => :delete, :data => { :confirm => 'Are you sure?' }
         - #Icones <div>Icons made by <a href="http://www.flaticon.com/authors/flat-icons" title="Flat Icons">Flat Icons</a> from <a href="http://www.flaticon.com" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
   %tfooter
 %br
@@ -23,8 +23,9 @@
   %h4 Importar Lista de Disciplinas
   = form_tag import_disciplinas_path, multipart: true do
     = file_field_tag :file
-    = submit_tag "Importar CSV"
+    = submit_tag "Importar CSV" 
 %br
 %br
-%h4 Ultima atualização
+%h4 Ultima atualização 
+-# Exibir a data de ultimo carregamento das disciplinas
 

@@ -1,6 +1,6 @@
 class DisciplinasController < ApplicationController
   before_action :set_disciplina, only: [:show, :edit, :update, :destroy]
-
+  
   # GET /disciplinas
   # GET /disciplinas.json
   def index
@@ -33,18 +33,13 @@ class DisciplinasController < ApplicationController
     @disciplina = Disciplina.new(disciplina_params)
 
     respond_to do |format|
-      
-      if Disciplina.exists?(:codigo => arr[0], :nome => arr[1])
-        flash[:aviso] = "A oferta não foi incluída pois já existe"
-      else
-        if @disciplina.save
+      if @disciplina.save
           format.html { redirect_to @disciplina, notice: 'Disciplina criada com sucesso.' }
           format.json { render :show, status: :created, location: @disciplina }
         else
           format.html { render :new }
           format.json { render json: @disciplina.errors, status: :unprocessable_entity }
         end
-      end
     end
   end
 

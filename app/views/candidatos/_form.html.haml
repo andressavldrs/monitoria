@@ -7,7 +7,7 @@
           %li= msg
 
   .field
-    = f.label :matricula
+    = f.label :matricula, 'Matrícula'
     = f.number_field :matricula
   .field
     = f.label :nome
@@ -16,10 +16,10 @@
     = f.label :semestre
     = f.number_field :semestre
   .field
-    = f.label :ira
+    = f.label :ira, 'IRA'
     = f.number_field :ira
   .field
     = f.label :email
     = f.text_field :email
   .actions
-    = f.submit 'Save'
+    = f.submit 'Salvar'

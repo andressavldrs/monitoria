@@ -123,7 +123,7 @@ table#candidatos td {
   text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.1);
   border-right: 1px solid #C1C3D1;
 }
-table#lista_disciplinas {
+table#disciplinas {
   text-align: center;
   margin: 0 auto;
   background: white;
@@ -132,7 +132,7 @@ table#lista_disciplinas {
   margin: auto;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
 }
-table#lista_disciplinas th {
+table#disciplinas th {
   text-align: center;
   font-weight: bold;
   color:#fff;
@@ -141,11 +141,11 @@ table#lista_disciplinas th {
   border-right: 1px solid #343a45;
   text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
 }
-table#lista_disciplinas th {
+table#disciplinas th {
   padding: 4px;
   text-align: center;
 }
-table#lista_disciplinas td {
+table#disciplinas td {
   padding: 4px;
   text-align: center;
 
