@@ -21,7 +21,7 @@ a {
   font-weight: bold;
 }
 
-table#disciplinas {
+table {
   text-align: center;
   margin: 0 auto;
   background: white;
@@ -30,7 +30,7 @@ table#disciplinas {
   margin: auto;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
 }
-table#disciplinas th {
+table th {
   text-align: center;
   font-weight: bold;
   color:#fff;
@@ -39,11 +39,11 @@ table#disciplinas th {
   border-right: 1px solid #343a45;
   text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
 }
-table#disciplinas th {
+table th {
   padding: 4px;
   text-align: left;
 }
-table#disciplinas td {
+table td {
   padding: 4px;
   text-align: center;
 
@@ -59,102 +59,6 @@ form label {
   margin-bottom: 5px;
   font-weight: bold;
 }
-table#professors {
-  text-align: center;
-  margin: 0 auto;
-  background: white;
-  border-radius:3px;
-  border-collapse: collapse;
-  margin: auto;
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
-}
-table#professors th {
-  text-align: center;
-  font-weight: bold;
-  color:#fff;
-  background:#364859;
-  border-bottom:4px solid #9ea7af;
-  border-right: 1px solid #343a45;
-  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
-}
-table#professors th {
-  padding: 4px;
-  text-align: center;
-}
-
-table#professors td {
-  padding: 4px;
-  text-align: center;
-
-  background:#FFFFFF;
-  vertical-align:middle;
-  text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.1);
-  border-right: 1px solid #C1C3D1;
-}
-
-table#candidatos {
-  text-align: center;
-  margin: 0 auto;
-  background: white;
-  border-radius:3px;
-  border-collapse: collapse;
-  margin: auto;
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
-}
-table#candidatos th {
-  text-align: center;
-  font-weight: bold;
-  color:#fff;
-  background:#364859;
-  border-bottom:4px solid #9ea7af;
-  border-right: 1px solid #343a45;
-  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
-}
-table#candidatos th {
-  padding: 4px;
-  text-align: left;
-}
-table#candidatos td {
-  padding: 4px;
-  text-align: center;
-
-  background:#FFFFFF;
-  vertical-align:middle;
-  text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.1);
-  border-right: 1px solid #C1C3D1;
-}
-table#disciplinas {
-  text-align: center;
-  margin: 0 auto;
-  background: white;
-  border-radius:3px;
-  border-collapse: collapse;
-  margin: auto;
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
-}
-table#disciplinas th {
-  text-align: center;
-  font-weight: bold;
-  color:#fff;
-  background:#364859;
-  border-bottom:4px solid #9ea7af;
-  border-right: 1px solid #343a45;
-  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
-}
-table#disciplinas th {
-  padding: 4px;
-  text-align: center;
-}
-table#disciplinas td {
-  padding: 4px;
-  text-align: center;
-
-  background:#FFFFFF;
-  vertical-align:middle;
-  text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.1);
-  border-right: 1px solid #C1C3D1;
-}
-
 
 /*!
  * Bootstrap v3.1.1 (http://getbootstrap.com)
