@@ -11,17 +11,22 @@
 
     #bs-example-navbar-collapse-1.collapse.navbar-collapse
       %ul.nav.navbar-nav
-        
         %li
-          %a{:href => new_candidato_path} Inscrição de Candidatos
-        %li
-          %a{:href => disciplinas_url} Disciplinas Ofertadas
-      %ul.nav.navbar-nav.navbar-right
-        %li
-          %a{:href => "#"} Novo Professor
-        %li
-          %a{:href => "#"} Login Professor
-       
+          %a{:href => disciplinas_url} Disciplinas CIC
+      - if !user_signed_in?
+        %ul.nav.navbar-nav
+          %li
+            %a{:href => new_candidato_path} Inscrição de Candidatos
+        %ul.nav.navbar-nav.navbar-right
+          %li 
+            %a{:href => "users/sign_in"} Entrar
+      - if user_signed_in?
+        %ul.nav.navbar-nav
+          %li
+            %a{:href => ofertas_url} Criar Oferta
+        %ul.nav.navbar-nav.navbar-right
+          %li
+            = link_to('Sair', destroy_user_session_path, method: :delete)
 
 %html
   %head
@@ -29,8 +34,11 @@
     = stylesheet_link_tag 'application'
     = javascript_include_tag 'application'
     = csrf_meta_tags
-
   %body
+    - if user_signed_in?
+      %p Olá, #{current_user.nome}
+    %p.notice= notice
+    %p.alert= alert
   .span12
   .span4
   - if flash[:sucesso]

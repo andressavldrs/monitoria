@@ -1,6 +1,7 @@
 class OfertasController < ApplicationController
+  before_action :authenticate_user!, only: [:show, :edit, :update, :destroy]
   before_action :set_oferta, only: [:show, :edit, :update, :destroy]
-
+  #before_action :authenticate_user!, except: [:index, :show]
   # GET /ofertas
   # GET /ofertas.json
   def index
@@ -14,7 +15,7 @@ class OfertasController < ApplicationController
 
   # GET /ofertas/new
   def new
-    @oferta = Oferta.new
+    @oferta = current_user.ofertas.build 
   end
 
   # GET /ofertas/1/edit
@@ -24,7 +25,7 @@ class OfertasController < ApplicationController
   # POST /ofertas
   # POST /ofertas.json
   def create
-    @oferta = Oferta.new(oferta_params)
+    @oferta = current_user.ofertas.build(oferta_params)
 
     respond_to do |format|
       if @oferta.save

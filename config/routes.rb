@@ -1,7 +1,14 @@
 Rails.application.routes.draw do
 
   resources :home
-  root :to => redirect('home')
+  root :to => redirect('/home')
+
+ # root 'disciplinas#index'
+
+  # devise_for :users
+  # root :to => redirect('/sign_in')
+
+  devise_for :views
 
   resources :selecionados
   root :to => redirect('/selecionados')
@@ -19,6 +26,8 @@ Rails.application.routes.draw do
   
   resources :candidatos
   root :to => redirect('/candidatos')
+
+  devise_for :users, controllers: { registrations: "registrations" }
 
   
 

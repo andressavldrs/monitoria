@@ -1,4 +1,5 @@
 class DisciplinasController < ApplicationController
+  before_action :authenticate_user!, only: [:show, :edit, :update, :destroy]
   before_action :set_disciplina, only: [:show, :edit, :update, :destroy]
   
   # GET /disciplinas
@@ -48,7 +49,7 @@ class DisciplinasController < ApplicationController
   def update
     respond_to do |format|
       if @disciplina.update(disciplina_params)
-        format.html { redirect_to @disciplina, notice: 'Disciplina was successfully updated.' }
+        format.html { redirect_to @disciplina, notice: 'Disciplina atualizada com sucesso.' }
         format.json { render :show, status: :ok, location: @disciplina }
       else
         format.html { render :edit }
@@ -62,7 +63,7 @@ class DisciplinasController < ApplicationController
   def destroy
     @disciplina.destroy
     respond_to do |format|
-      format.html { redirect_to disciplinas_url, notice: 'Disciplina was successfully destroyed.' }
+      format.html { redirect_to disciplinas_url, notice: 'Disciplina excuída com sucesso.' }
       format.json { head :no_content }
     end
   end

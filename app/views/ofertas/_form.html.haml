@@ -9,5 +9,9 @@
   .field
     = f.label :turma
     = f.text_field :turma
+  .field
+    = f.label :disciplina, 'Disciplina'
+
+    = f.select :disciplina, options_for_select(Disciplina.all.map{|s|[s.nome]})
   .actions
-    = f.submit 'Save'
+    = f.submit 'Salvar'

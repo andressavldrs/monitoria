@@ -1,4 +1,4 @@
-%h1 Listing ofertas
+%h1 Lista de Ofertas
 
 %table
   %thead
@@ -12,10 +12,10 @@
     - @ofertas.each do |oferta|
       %tr
         %td= oferta.turma
-        %td= link_to 'Show', oferta
-        %td= link_to 'Edit', edit_oferta_path(oferta)
-        %td= link_to 'Destroy', oferta, :method => :delete, :data => { :confirm => 'Are you sure?' }
-
+        %td= link_to 'Mostrar', oferta
+        -if user_signed_in? #oferta.user == current.user habilita edição e exclusão somente para quem criou a oferta
+          %td= link_to 'Editar', edit_oferta_path(oferta)
+          %td= link_to 'Excluir', oferta, :method => :delete, :data => { :confirm => 'Are you sure?' }
 %br
 
-= link_to 'New Oferta', new_oferta_path
+= link_to 'Nova Oferta', new_oferta_path
