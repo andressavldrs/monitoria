@@ -10,6 +10,10 @@ class Disciplina < ApplicationRecord
 # 	end
 # end
 
+# 	metodo para exibir a disciplina com o código e nome
+	def codigo_with_nome
+      "#{codigo} - #{nome}"
+    end
 
 	def self.import(file)
 		CSV.foreach(file.path, headers: true) do |row|
@@ -24,7 +28,7 @@ class Disciplina < ApplicationRecord
 		end
 	end
 
-	validates :nome, :presence => true, :uniqueness => true
+	validates :nome, :presence => true
 	validates :codigo, numericality: { only_integer: true }, :presence => true, :uniqueness => true
 	#valida para não incluir disciplinas duplicadas
 end

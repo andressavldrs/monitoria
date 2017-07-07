@@ -3,19 +3,19 @@
 %table
   %thead
     %tr
+      %th Disciplina 
       %th Turma
-      %th
       %th
       %th
 
   %tbody
     - @ofertas.each do |oferta|
       %tr
-        %td= oferta.turma
-        %td= link_to 'Mostrar', oferta
+        %td= link_to "#{oferta.disciplina.codigo} - #{oferta.disciplina.nome}", oferta
+        %td= link_to "#{oferta.turma}", oferta
         -if user_signed_in? #oferta.user == current.user habilita edição e exclusão somente para quem criou a oferta
-          %td= link_to 'Editar', edit_oferta_path(oferta)
-          %td= link_to 'Excluir', oferta, :method => :delete, :data => { :confirm => 'Are you sure?' }
+          %td= link_to image_tag('editar.png'), edit_oferta_path(oferta)
+          %td= link_to image_tag('deletar.png'), oferta, :method => :delete, :data => { :confirm => 'Are you sure?' }
 %br
 
-= link_to 'Nova Oferta', new_oferta_path
+= link_to image_tag('adicionar.png'), new_oferta_path

@@ -5,13 +5,11 @@
       %ul
         - @oferta.errors.full_messages.each do |msg|
           %li= msg
-
+  .field
+    = f.label :disciplina, 'Disciplina'
+    = f.collection_select(:disciplina_id, Disciplina.all, :id, :codigo_with_nome, :prompt => true)
   .field
     = f.label :turma
     = f.text_field :turma
-  .field
-    = f.label :disciplina, 'Disciplina'
-
-    = f.select :disciplina, options_for_select(Disciplina.all.map{|s|[s.nome]})
   .actions
     = f.submit 'Salvar'

@@ -1,9 +1,16 @@
 %p#notice= notice
+%p
+	%b Código:
+	= @oferta.disciplina.codigo
 
 %p
-  %b Turma:
-  = @oferta.turma
+	%b Nome:
+	= @oferta.disciplina.nome
 
-= link_to 'Edit', edit_oferta_path(@oferta)
+%p	
+	%b Turma:
+	= @oferta.turma
+
+= link_to image_tag('voltar.png'), ofertas_path
 \|
-= link_to 'Back', ofertas_path
+= link_to image_tag('editar.png'), edit_oferta_path(@oferta)
