@@ -27,7 +27,7 @@ class CandidatosController < ApplicationController
 
     respond_to do |format|
       if @candidato.save
-        format.html { redirect_to @candidato, notice: 'Candidato was successfully created.' }
+        format.html { redirect_to @candidato, notice: 'Inscrição realizada com sucesso!' }
         format.json { render :show, status: :created, location: @candidato }
       else
         format.html { render :new }
@@ -41,7 +41,7 @@ class CandidatosController < ApplicationController
   def update
     respond_to do |format|
       if @candidato.update(candidato_params)
-        format.html { redirect_to @candidato, notice: 'Candidato was successfully updated.' }
+        format.html { redirect_to @candidato, notice: 'Candidato atualizado com sucesso!' }
         format.json { render :show, status: :ok, location: @candidato }
       else
         format.html { render :edit }
@@ -55,7 +55,7 @@ class CandidatosController < ApplicationController
   def destroy
     @candidato.destroy
     respond_to do |format|
-      format.html { redirect_to candidatos_url, notice: 'Candidato was successfully destroyed.' }
+      format.html { redirect_to candidatos_url, notice: 'Candidato excluído com sucesso!.' }
       format.json { head :no_content }
     end
   end
@@ -68,6 +68,6 @@ class CandidatosController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def candidato_params
-      params.require(:candidato).permit(:matricula, :nome, :semestre, :ira, :email)
+      params.require(:candidato).permit(:matricula, :nome, :semestre, :ira, :email, :oferta_id, :tipo_id)
     end
 end

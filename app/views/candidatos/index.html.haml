@@ -6,24 +6,24 @@
       %th Matricula
       %th Nome
       %th Semestre
-      %th Ira
-      %th Email
-      %th
+      %th IRA
+      %th Disciplina
+      %th Turma
       %th
       %th
 
   %tbody
     - @candidatos.each do |candidato|
       %tr
-        %td= candidato.matricula
-        %td= candidato.nome
+        %td= link_to "#{candidato.matricula}", candidato
+        %td= link_to "#{candidato.nome}", candidato
         %td= candidato.semestre
         %td= candidato.ira
-        %td= candidato.email
-        %td= link_to 'Show', candidato
-        %td= link_to 'Edit', edit_candidato_path(candidato)
-        %td= link_to 'Destroy', candidato, :method => :delete, :data => { :confirm => 'Are you sure?' }
+        %td= link_to "#{candidato.oferta.disciplina.nome}", disciplina_url(candidato.oferta.disciplina)
+        %td= link_to "#{candidato.oferta.turma}", oferta_url(candidato.oferta)
+        %td= link_to image_tag('editar.png'), edit_candidato_path(candidato)
+        %td= link_to image_tag('deletar.png'), candidato, :method => :delete, :data => { :confirm => 'Você realmente deseja remover?'  }
 
 %br
 
-= link_to 'Novo Candidato', new_candidato_path
+= link_to image_tag('adicionar.png'), new_candidato_path
