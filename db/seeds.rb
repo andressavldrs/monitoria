@@ -5,3 +5,9 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+#Categorias de Monitoria 
+Tipo.create([{descricao: 'Monitoria Voluntária'},
+			 {descricao: 'Monitoria Remunerada'},
+			 {descricao: 'Tutoria Voluntária'},
+			 {descricao: 'Tutoria Remunerada'}])

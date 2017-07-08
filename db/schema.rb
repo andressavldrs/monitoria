@@ -22,8 +22,8 @@ ActiveRecord::Schema.define(version: 20170705022122) do
     t.integer "tipo_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["oferta_id"], name: "index_candidatos_on_oferta_id", unique: true
-    t.index ["tipo_id"], name: "index_candidatos_on_tipo_id", unique: true
+    t.index ["oferta_id"], name: "index_candidatos_on_oferta_id"
+    t.index ["tipo_id"], name: "index_candidatos_on_tipo_id"
   end
 
   create_table "disciplinas", force: :cascade do |t|
@@ -39,16 +39,14 @@ ActiveRecord::Schema.define(version: 20170705022122) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "user_id"
-    t.index ["disciplina_id"], name: "index_ofertas_on_disciplina_id", unique: true
+    t.index ["disciplina_id"], name: "index_ofertas_on_disciplina_id"
   end
 
   create_table "selecionados", force: :cascade do |t|
-    t.integer "oferta_id"
     t.integer "candidato_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["candidato_id"], name: "index_selecionados_on_candidato_id", unique: true
-    t.index ["oferta_id"], name: "index_selecionados_on_oferta_id", unique: true
+    t.index ["candidato_id"], name: "index_selecionados_on_candidato_id"
   end
 
   create_table "tipos", force: :cascade do |t|
