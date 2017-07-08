@@ -1,6 +1,6 @@
 class Disciplina < ApplicationRecord
   
-	has_many :ofertas
+	has_many :ofertas, dependent: :destroy
 
  	require 'csv'
 #  	def self.import(file)
