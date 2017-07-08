@@ -10,9 +10,10 @@ end
 gem 'rails', '~> 5.1.1'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
-# Use carrierwave e devise para automatizar os logins
-gem 'carrierwave'
+# Use devise para automatizar os logins
 gem 'devise'
+# Use figaro para realizar as configurações de usuário que realiza envio de email
+gem 'figaro'
 # Use Puma as the app server
 gem 'puma', '~> 3.7'
 # Use SCSS for stylesheets
