@@ -29,7 +29,7 @@ class OfertasController < ApplicationController
 
     respond_to do |format|
       if @oferta.save
-        format.html { redirect_to @oferta, notice: 'Oferta was successfully created.' }
+        format.html { redirect_to @oferta, notice: 'Oferta de monitoria criada com sucesso!' }
         format.json { render :show, status: :created, location: @oferta }
       else
         format.html { render :new }
@@ -43,7 +43,7 @@ class OfertasController < ApplicationController
   def update
     respond_to do |format|
       if @oferta.update(oferta_params)
-        format.html { redirect_to @oferta, notice: 'Oferta was successfully updated.' }
+        format.html { redirect_to @oferta, notice: 'Oferta de monitoria editada com sucesso!' }
         format.json { render :show, status: :ok, location: @oferta }
       else
         format.html { render :edit }
@@ -57,7 +57,7 @@ class OfertasController < ApplicationController
   def destroy
     @oferta.destroy
     respond_to do |format|
-      format.html { redirect_to ofertas_url, notice: 'Oferta was successfully destroyed.' }
+      format.html { redirect_to ofertas_url, notice: 'Oferta de monitoria excluida com sucesso!' }
       format.json { head :no_content }
     end
   end
@@ -70,6 +70,6 @@ class OfertasController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def oferta_params
-      params.require(:oferta).permit(:turma)
+      params.require(:oferta).permit(:turma, :disciplina_id)
     end
 end

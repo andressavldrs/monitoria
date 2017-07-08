@@ -1,7 +1,7 @@
 %p#notice= notice
 
 %p
-  %b Matricula:
+  %b Matrícula:
   = @candidato.matricula
 %p
   %b Nome:
@@ -15,7 +15,16 @@
 %p
   %b Email:
   = @candidato.email
+%p
+  %b Disciplina:
+  = @candidato.oferta.disciplina.nome
+%p
+  %b Turma:
+  = @candidato.oferta.turma
+%p
+  %b Categoria:
+  = @candidato.tipo.descricao
 
-= link_to 'Edit', edit_candidato_path(@candidato)
+= link_to image_tag('voltar.png'), candidatos_path
 \|
-= link_to 'Back', candidatos_path
+= link_to image_tag('editar.png'), edit_candidato_path(@candidato)

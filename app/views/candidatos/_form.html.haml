@@ -21,5 +21,12 @@
   .field
     = f.label :email
     = f.text_field :email
+  .field
+    = f.label :oferta, 'Disciplina'
+    = f.collection_select(:oferta_id, Oferta.all, :id, :nome_with_turma, :prompt => true)
+  .field
+    = f.label :tipo, 'Categoria'
+    = f.collection_select(:tipo_id, Tipo.all, :id, :descricao, :prompt => true)
+
   .actions
     = f.submit 'Salvar'
