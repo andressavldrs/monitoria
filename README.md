@@ -31,3 +31,19 @@ E para rodar a aplicaçâo é preciso executar:
   rake db:seed
   rails server
 ```
+Ao iniciar a aplicação pela primeira vez é necessário inicializar a gem figaro
+  bundle exec figaro install
+  rake db:seed
+  rails server
+```
+Configure o email usado para enviar as requisições de login.
+  Vá até:
+  config/application.yml
+
+  Cole no arquivo:
+  GMAIL_DOMAIN: mail.gmail.com
+  GMAIL_USERNAME: exemplo_email@gmail.com #utilize um email válido do gmail
+  GMAIL_PASSWORD: senha_email #utilize a senha deste email
+
+  OBS: Este arquivo por medida de segurança não é possivel ser commitado para o github
+```
