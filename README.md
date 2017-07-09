@@ -45,5 +45,5 @@ Configure o email usado para enviar as requisições de login
   GMAIL_USERNAME: exemplo_email@gmail.com #utilize um email válido do gmail
   GMAIL_PASSWORD: senha_email #utilize a senha deste email
 
-  OBS: Este arquivo por medida de segurança não é possivel ser commitado para o github
+  OBS: Este arquivo por medida de segurança, é impedido de ser commitado para o github
 ```
