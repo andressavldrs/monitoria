@@ -32,11 +32,13 @@ E para rodar a aplicaçâo é preciso executar:
   rails server
 ```
 Ao iniciar a aplicação pela primeira vez é necessário inicializar a gem figaro
+```
   bundle exec figaro install
   rake db:seed
   rails server
 ```
-Configure o email usado para enviar as requisições de login.
+Configure o email usado para enviar as requisições de login
+```
   Vá até:
   config/application.yml
 
