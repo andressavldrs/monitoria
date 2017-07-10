@@ -46,7 +46,7 @@ ActiveRecord::Schema.define(version: 20170705022122) do
     t.integer "candidato_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["candidato_id"], name: "index_selecionados_on_candidato_id"
+    t.index ["candidato_id"], name: "index_selecionados_on_candidato_id", unique: true
   end
 
   create_table "tipos", force: :cascade do |t|
