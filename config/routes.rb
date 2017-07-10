@@ -27,6 +27,18 @@ Rails.application.routes.draw do
   resources :candidatos
   root :to => redirect('/candidatos')
 
+  resources :selecionados do
+    collection do
+      post 'create_multiple'
+    end
+  end
+
+  resources :selecionados do
+    collection do
+      post 'delete_multiple'
+    end
+  end
+
   devise_for :users, controllers: { registrations: "registrations" }
 
   

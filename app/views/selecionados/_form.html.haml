@@ -7,10 +7,7 @@
           %li= msg
 
   .field
-    = f.label :disciplina
-    = f.text_field :disciplina
-  .field
-    = f.label :oferta
-    = f.text_field :oferta
+    = f.label :candidato, 'Candidato'
+    = f.collection_select(:candidato_id, Candidato.all, :id, :nome, :prompt => true)
   .actions
     = f.submit 'Save'

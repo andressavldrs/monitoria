@@ -37,6 +37,28 @@ class SelecionadosController < ApplicationController
     end
   end
 
+  def create_multiple
+    @ids = params[:candidato_ids]
+    if @id 
+      @ids.each do |id|
+        @selecionado = Selecionado.create(candidato_id: id)
+      end
+    end
+    redirect_to selecionados_path
+  end
+
+  def delete_multiple
+    @ids = params[:selecionado_ids]
+    if @ids
+      @ids.each do |id|
+        @selecionado = Selecionado.find(id)
+        if @selecionado 
+          @selecionado.destroy
+        end
+      end
+    end
+    redirect_to selecionados_path
+  end
   # PATCH/PUT /selecionados/1
   # PATCH/PUT /selecionados/1.json
   def update
@@ -69,6 +91,6 @@ class SelecionadosController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def selecionado_params
-      params.require(:selecionado).permit(:disciplina_id, :oferta_id)
+      params.require(:selecionado).permit(:candidato_id)
     end
 end

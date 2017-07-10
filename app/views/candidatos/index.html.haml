@@ -1,29 +1,30 @@
-%h1 Lista de candidatos
+%h1 Lista de candidatos inscritos
 
-%table
-  %thead
-    %tr
-      %th Matricula
-      %th Nome
-      %th Semestre
-      %th IRA
-      %th Disciplina
-      %th Turma
-      %th
-      %th
-
-  %tbody
-    - @candidatos.each do |candidato|
+= form_tag create_multiple_selecionados_path, :method => :post do
+  %table
+    %thead
       %tr
-        %td= link_to "#{candidato.matricula}", candidato
-        %td= link_to "#{candidato.nome}", candidato
-        %td= candidato.semestre
-        %td= candidato.ira
-        %td= link_to "#{candidato.oferta.disciplina.nome}", disciplina_url(candidato.oferta.disciplina)
-        %td= link_to "#{candidato.oferta.turma}", oferta_url(candidato.oferta)
-        %td= link_to image_tag('editar.png'), edit_candidato_path(candidato)
-        %td= link_to image_tag('deletar.png'), candidato, :method => :delete, :data => { :confirm => 'Você realmente deseja remover?'  }
+        %th 
+        %th Matricula
+        %th Nome
+        %th Semestre
+        %th IRA
+        %th Disciplina
+        %th Turma
+        %th Categoria
 
-%br
-
-= link_to image_tag('adicionar.png'), new_candidato_path
+    %tbody
+      - @candidatos.each do |candidato|
+        %tr
+          %td= check_box_tag 'candidato_ids[]', candidato.id
+          %td= link_to "#{candidato.matricula}", candidato
+          %td= link_to "#{candidato.nome}", candidato
+          %td= candidato.semestre
+          %td= candidato.ira
+          %td= link_to "#{candidato.oferta.disciplina.nome}", disciplina_url(candidato.oferta.disciplina)
+          %td= link_to "#{candidato.oferta.turma}", oferta_url(candidato.oferta)
+          %td= candidato.tipo.descricao
+          
+  %br
+  = submit_tag "Selecionar candidatos"
+  

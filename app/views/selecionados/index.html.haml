@@ -1,23 +1,33 @@
-%h1 Listing selecionados
+%h1 Candidatos Selecionados
 
-%table
-  %thead
-    %tr
-      %th Disciplina
-      %th Oferta
-      %th
-      %th
-      %th
-
-  %tbody
-    - @selecionados.each do |selecionado|
+= form_tag delete_multiple_selecionados_path, :method => :post do
+  %table
+    %thead
       %tr
-        %td= selecionado.disciplina
-        %td= selecionado.oferta
-        %td= link_to 'Show', selecionado
-        %td= link_to 'Edit', edit_selecionado_path(selecionado)
-        %td= link_to 'Destroy', selecionado, :method => :delete, :data => { :confirm => 'Are you sure?' }
+        %th 
+        %th Matricula
+        %th Nome
+        %th Semestre
+        %th IRA
+        %th Disciplina
+        %th Turma
+        %th Categoria
+        %th
+    %tbody
+      - @selecionados.each do |selecionado|
+        %tr
+          %td= check_box_tag 'selecionado_ids[]', selecionado.id
+          %td= link_to "#{selecionado.candidato.matricula}", candidato_url(selecionado.candidato)
+          %td= link_to "#{selecionado.candidato.nome}", candidato_url(selecionado.candidato)
+          %td= selecionado.candidato.semestre
+          %td= selecionado.candidato.ira
+          %td= link_to "#{selecionado.candidato.oferta.disciplina.nome}", disciplina_url(selecionado.candidato.oferta.disciplina)
+          %td= link_to "#{selecionado.candidato.oferta.turma}", oferta_url(selecionado.candidato.oferta)
+          %td= selecionado.candidato.tipo.descricao
+          %td= link_to image_tag('deletar.png'),  selecionado, :method => :delete, :data => { :confirm => 'Você realmente deseja remover?'  }
+  %br
+    = link_to image_tag('adicionar.png'), candidatos_path
+    %br
+  = image_submit_tag('deletar.png')
 
-%br
-
-= link_to 'New Selecionado', new_selecionado_path
+  
