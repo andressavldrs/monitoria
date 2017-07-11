@@ -1,5 +1,5 @@
 FactoryGirl.define do
   factory :tipo do
-    descricao "MyString"
+    descricao "Categoria"
   end
 end

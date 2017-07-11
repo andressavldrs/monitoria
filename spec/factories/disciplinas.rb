@@ -1,6 +1,6 @@
 FactoryGirl.define do
   factory :disciplina do
-    codigo 1
-    nome "MyString"
+    codigo 10000
+    nome "Disciplina"
   end
 end

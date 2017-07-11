@@ -1,9 +1,11 @@
 FactoryGirl.define do
   factory :candidato do
-    matricula 1
-    nome "MyString"
-    semestre 1
-    ira 1
-    email "MyString"
+    matricula 100000000
+    nome "John Smith"
+    semestre 2
+    ira 5
+    email "johnsmith@email.com"
+    association :oferta, factory: :oferta
+    association :tipo, factory: :tipo
   end
 end

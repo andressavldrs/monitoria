@@ -1,4 +1,4 @@
 class Tipo < ApplicationRecord
 	has_many :candidatos, dependent: :destroy
-	validates :descricao, uniqueness: { case_sensitive: false }
+	validates :descricao, uniqueness: { case_sensitive: false }, presence: :true
 end
