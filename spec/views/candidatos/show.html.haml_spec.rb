@@ -2,13 +2,7 @@ require 'rails_helper'
 
 RSpec.describe "candidatos/show", type: :view do
   before(:each) do
-    @candidato = assign(:candidato, Candidato.create!(
-      :matricula => 2,
-      :nome => "Nome",
-      :semestre => 3,
-      :ira => 4,
-      :email => "Email"
-    ))
+    @candidato = assign(:candidato, FactoryGirl.build(:candidato))
   end
 
   it "renders attributes in <p>" do

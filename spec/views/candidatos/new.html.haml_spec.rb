@@ -2,13 +2,7 @@ require 'rails_helper'
 
 RSpec.describe "candidatos/new", type: :view do
   before(:each) do
-    assign(:candidato, Candidato.new(
-      :matricula => 1,
-      :nome => "MyString",
-      :semestre => 1,
-      :ira => 1,
-      :email => "MyString"
-    ))
+    assign(:candidato, FactoryGirl.build(:candidato))
   end
 
   it "renders new candidato form" do

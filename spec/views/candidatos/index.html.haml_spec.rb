@@ -3,20 +3,8 @@ require 'rails_helper'
 RSpec.describe "candidatos/index", type: :view do
   before(:each) do
     assign(:candidatos, [
-      Candidato.create!(
-        :matricula => 2,
-        :nome => "Nome",
-        :semestre => 3,
-        :ira => 4,
-        :email => "Email"
-      ),
-      Candidato.create!(
-        :matricula => 2,
-        :nome => "Nome",
-        :semestre => 3,
-        :ira => 4,
-        :email => "Email"
-      )
+      FactoryGirl.build(:candidato),
+      FactoryGirl.build(:candidato)
     ])
   end
 
