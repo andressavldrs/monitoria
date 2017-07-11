@@ -1,4 +1,5 @@
 class TiposController < ApplicationController
+  #before_action :authenticate_user!
   before_action :set_tipo, only: [:show, :edit, :update, :destroy]
 
   # GET /tipos

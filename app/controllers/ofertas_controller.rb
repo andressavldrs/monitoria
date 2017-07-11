@@ -1,5 +1,5 @@
 class OfertasController < ApplicationController
-  before_action :authenticate_user!, only: [:show, :edit, :update, :destroy]
+  #before_action :authenticate_user!
   before_action :set_oferta, only: [:show, :edit, :update, :destroy]
   #before_action :authenticate_user!, except: [:index, :show]
   # GET /ofertas
