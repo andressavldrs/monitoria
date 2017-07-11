@@ -24,6 +24,8 @@
         %ul.nav.navbar-nav
           %li
             %a{:href => ofertas_url} Criar Oferta
+          %li
+            %a{:href => candidatos_url} Candidatos Ofertas
         %ul.nav.navbar-nav.navbar-right
           %li
             = link_to('Sair', destroy_user_session_path, method: :delete)
